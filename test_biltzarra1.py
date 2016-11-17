@@ -2,7 +2,7 @@
 Tenis jokoaren markadorea simulatu
 
 Arauak:
-0 - Love
+0-0 - Love
 1-0 - Fifteen - Love
 2-0 - Thirty - Love
 3-0 - Forty - Love
