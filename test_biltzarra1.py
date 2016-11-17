@@ -128,7 +128,7 @@ def test_deuce_3():
     assert t.result() == 'Deuce'
 
 
-def test_advantage_player_1():
+def test_advantage_player_1_4_3():
     t = Tenis()
     t.wins_1()
     t.wins_1()
