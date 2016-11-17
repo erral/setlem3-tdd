@@ -86,114 +86,106 @@ class Tenis(object):
             return True
 
 
-def test_tenis_exists():
-    t = Tenis()
-    assert isinstance(t, Tenis)
+class TestTenis:
 
+    def setup(self):
+        self.t = Tenis()
 
-def test_initial_result():
-    t = Tenis()
-    assert t.result() == 'Love'
+    def test_tenis_exists(self):
 
+        assert isinstance(self.t, Tenis)
 
-def test_15_love():
-    t = Tenis()
-    t.wins_1()
-    assert t.result() == 'Fifteen - Love'
+    def test_initial_result(self):
 
+        assert self.t.result() == 'Love'
 
-def test_30_love():
-    t = Tenis()
-    t.wins_1()
-    t.wins_1()
-    assert t.result() == 'Thirty - Love'
+    def test_15_love(self):
 
+        self.t.wins_1()
+        assert self.t.result() == 'Fifteen - Love'
 
-def test_40_love():
-    t = Tenis()
-    t.wins_1()
-    t.wins_1()
-    t.wins_1()
-    assert t.result() == 'Forty - Love'
+    def test_30_love(self):
 
+        self.t.wins_1()
+        self.t.wins_1()
+        assert self.t.result() == 'Thirty - Love'
 
-def test_deuce_3():
-    t = Tenis()
-    t.wins_1()
-    t.wins_1()
-    t.wins_1()
-    t.wins_2()
-    t.wins_2()
-    t.wins_2()
-    assert t.result() == 'Deuce'
+    def test_40_love(self):
 
+        self.t.wins_1()
+        self.t.wins_1()
+        self.t.wins_1()
+        assert self.t.result() == 'Forty - Love'
 
-def test_advantage_player_1_4_3():
-    t = Tenis()
-    t.wins_1()
-    t.wins_1()
-    t.wins_1()
-    t.wins_2()
-    t.wins_2()
-    t.wins_2()
-    t.wins_1()
-    assert t.result() == 'Advantage player1'
+    def test_deuce_3(self):
 
+        self.t.wins_1()
+        self.t.wins_1()
+        self.t.wins_1()
+        self.t.wins_2()
+        self.t.wins_2()
+        self.t.wins_2()
+        assert self.t.result() == 'Deuce'
 
-def test_advantage_player_2_3_4():
-    t = Tenis()
-    t.wins_1()
-    t.wins_1()
-    t.wins_1()
-    t.wins_2()
-    t.wins_2()
-    t.wins_2()
-    t.wins_2()
-    assert t.result() == 'Advantage player2'
+    def test_advantage_player_1_4_3(self):
 
+        self.t.wins_1()
+        self.t.wins_1()
+        self.t.wins_1()
+        self.t.wins_2()
+        self.t.wins_2()
+        self.t.wins_2()
+        self.t.wins_1()
+        assert self.t.result() == 'Advantage player1'
 
-def test_advantage_player_1_6_5():
-    t = Tenis()
-    t.wins_1()
-    t.wins_1()
-    t.wins_1()
-    t.wins_2()
-    t.wins_2()
-    t.wins_2()
-    t.wins_1()
-    t.wins_2()
-    t.wins_1()
-    t.wins_2()
-    t.wins_1()
+    def test_advantage_player_2_3_4(self):
 
-    assert t.result() == 'Advantage player1'
+        self.t.wins_1()
+        self.t.wins_1()
+        self.t.wins_1()
+        self.t.wins_2()
+        self.t.wins_2()
+        self.t.wins_2()
+        self.t.wins_2()
+        assert self.t.result() == 'Advantage player2'
 
+    def test_advantage_player_1_6_5(self):
 
-def test_fifteen_all():
-    t = Tenis()
-    t.wins_1()
-    t.wins_2()
-    assert t.result() == 'Fifteen All'
+        self.t.wins_1()
+        self.t.wins_1()
+        self.t.wins_1()
+        self.t.wins_2()
+        self.t.wins_2()
+        self.t.wins_2()
+        self.t.wins_1()
+        self.t.wins_2()
+        self.t.wins_1()
+        self.t.wins_2()
+        self.t.wins_1()
 
+        assert self.t.result() == 'Advantage player1'
 
-def test_thirty_all():
-    t = Tenis()
-    t.wins_1()
-    t.wins_2()
-    t.wins_1()
-    t.wins_2()
-    assert t.result() == 'Thirty All'
+    def test_fifteen_all(self):
 
+        self.t.wins_1()
+        self.t.wins_2()
+        assert self.t.result() == 'Fifteen All'
 
+    def test_thirty_all(self):
 
-def test_invalid_game_raises_exception():
-    def invalid_game_function():
-        t = Tenis()
-        t.wins_1()
-        t.wins_1()
-        t.wins_1()
-        t.wins_1()
-        t.wins_2()
+        self.t.wins_1()
+        self.t.wins_2()
+        self.t.wins_1()
+        self.t.wins_2()
+        assert self.t.result() == 'Thirty All'
 
-    with pytest.raises(InvalidGamePlay):
-        invalid_game_function()
+    def test_invalid_game_raises_exception(self):
+        def invalid_game_function():
+            self.t.wins_1()
+            self.t.wins_1()
+            self.t.wins_1()
+            self.t.wins_1()
+            self.t.wins_2()
+
+        with pytest.raises(InvalidGamePlay):
+            invalid_game_function()
