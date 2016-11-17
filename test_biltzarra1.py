@@ -169,7 +169,6 @@ def test_advantage_player_1_6_5():
     assert t.result() == 'Advantage player1'
 
 
-
 def test_fifteen_all():
     t = Tenis()
     t.wins_1()
