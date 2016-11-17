@@ -140,6 +140,53 @@ def test_advantage_player_1_4_3():
     assert t.result() == 'Advantage player1'
 
 
+def test_advantage_player_2_3_4():
+    t = Tenis()
+    t.wins_1()
+    t.wins_1()
+    t.wins_1()
+    t.wins_2()
+    t.wins_2()
+    t.wins_2()
+    t.wins_2()
+    assert t.result() == 'Advantage player2'
+
+
+def test_advantage_player_1_6_5():
+    t = Tenis()
+    t.wins_1()
+    t.wins_1()
+    t.wins_1()
+    t.wins_2()
+    t.wins_2()
+    t.wins_2()
+    t.wins_1()
+    t.wins_2()
+    t.wins_1()
+    t.wins_2()
+    t.wins_1()
+
+    assert t.result() == 'Advantage player1'
+
+
+
+def test_fifteen_all():
+    t = Tenis()
+    t.wins_1()
+    t.wins_2()
+    assert t.result() == 'Fifteen All'
+
+
+def test_thirty_all():
+    t = Tenis()
+    t.wins_1()
+    t.wins_2()
+    t.wins_1()
+    t.wins_2()
+    assert t.result() == 'Thirty All'
+
+
+
 def test_invalid_game_raises_exception():
     def invalid_game_function():
         t = Tenis()
