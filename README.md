@@ -5,11 +5,12 @@
 Instalatzeko:
 
     $ virtualenv .
+    $ source bin/activate
     $ pip install -r requirements.txt
 
 Testak exekutatu:
 
-    $ pytest
+    $ pytest test_biltzarra.py
 
 Testak automatikoki exekutatzeko programatzen ari zaren artean eta
 beren berri notifikazioen bidez edukitzeko
