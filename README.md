@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/erral/setlem3-tdd.svg?branch=master)](https://travis-ci.org/erral/setlem3-tdd)
+[![Build Status](https://travis-ci.com/erral/setlem3-tdd.svg?branch=master)](https://travis-ci.com/erral/setlem3-tdd)
 
 # Tenis jokoaren kata
 
